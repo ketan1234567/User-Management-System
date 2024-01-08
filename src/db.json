@@ -1,0 +1,32 @@
+{
+    "signup": [
+      {
+        "name": "vishal",
+        "email": "vishaldeshmukh647@gmail.com",
+        "role": "user",
+        "isActive": "0",
+        "id": 2
+      },
+      {
+        "name": "vishal",
+        "email": "vishaldeshmukh647@gmail.com",
+        "role": "user",
+        "isActive": "0",
+        "id": 2
+      },
+      {
+        "name": "vishal",
+        "email": "vishaldeshmukh647@gmail.com",
+        "role": "user",
+        "isActive": "0",
+        "id": 2
+      },
+      {
+        "name": "vishal",
+        "email": "vishaldeshmukh647@gmail.com",
+        "role": "user",
+        "isActive": "0",
+        "id": 2
+      }
+    ]
+  }
