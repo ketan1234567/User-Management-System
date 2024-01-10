@@ -17,12 +17,13 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { UserListComponent } from './user-list/user-list.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import{MatTableModule} from "@angular/material/table";
+import { MaterialModule } from './Material-Module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserListComponent,
+    user-list,
     AddUserComponent
   ],
   imports: [
@@ -38,7 +39,8 @@ import{MatTableModule} from "@angular/material/table";
     RouterModule,
     MatExpansionModule,
     MatTooltipModule,
-    MatTableModule
+    MatTableModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
