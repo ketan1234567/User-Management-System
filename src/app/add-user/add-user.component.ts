@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MainServicesService } from '../main-services.service';
+import * as alertify from 'alertifyjs';
 
 @Component({
   selector: 'app-add-user',
@@ -6,5 +9,26 @@ import { Component } from '@angular/core';
   styleUrl: './add-user.component.css'
 })
 export class AddUserComponent {
+  constructor(private _services:MainServicesService){}
+  updateform = new FormGroup({
+    name: new FormControl("",Validators.required),
+    email: new FormControl("",Validators.required),
+    role: new FormControl("",Validators.required)
+  })
+  SaveUser(){
+    if(this.updateform.valid){
+      this._services.Adduser(this.updateform.value).subscribe((result)=>{
+        console.log(result);
+        if (result) {
+          alertify.success("This is SuccessFully  Inserted Data");
+  
+        } else {
+          alertify.error("please Try again");
+        }
+      })
+    }
+   // console.log(this.updateform.value);
 
+    
+  }
 }

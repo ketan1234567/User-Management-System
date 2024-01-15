@@ -1,0 +1,112 @@
+{
+  "signup": [
+    {
+      "name": "anil",
+      "email": "anil647@gmail.com",
+      "password": "vishal@123",
+      "role": "user",
+      "isActive": "0",
+      "id": 2
+    },
+    {
+      "name": "hiteshrawat",
+      "email": "hiteshrawat@123.com",
+      "password": "hitesh@123",
+      "role": "staff",
+      "isActive": "0",
+      "id": 3
+    },
+    {
+      "name": "ketandeshmukh",
+      "email": "deshmukhketan647@gmail.com",
+      "password": "ketan@123",
+      "role": "staff",
+      "isActive": 1,
+      "id": 4
+    },
+    {
+      "name": "snehal",
+      "email": "snehal@123.com",
+      "password": "wwwwwwwwwwwww",
+      "role": "user",
+      "isActive": true,
+      "id": 5
+    },
+    {
+      "name": "surai",
+      "email": "surajshinde@123.com",
+      "password": "wwwwwwwwwwwww",
+      "role": "user",
+      "isActive": true,
+      "id": 5
+    },
+    {
+      "name": "vivek",
+      "email": "vivek@123.com",
+      "password": "wwwwwwwwwwwww",
+      "role": "user",
+      "isActive": true,
+      "id": 5
+    },
+    {
+      "name": "Gillian Newton",
+      "email": "porygej@mailinator.com",
+      "role": "Quo voluptatum iure ",
+      "id": 7
+    },
+    {
+      "name": "Walter Tanner",
+      "email": "sipofeguwi@mailinator.com",
+      "role": "Aliquid aute recusan",
+      "id": 8
+    },
+    {
+      "name": "Walter Tanner",
+      "email": "sipofeguwi@mailinator.com",
+      "role": "Aliquid aute recusan",
+      "id": 9
+    },
+    {
+      "name": "Walter Tanner",
+      "email": "sipofeguwi@mailinator.com",
+      "role": "Aliquid aute recusan",
+      "id": 10
+    },
+    {
+      "name": "Walter Tanner",
+      "email": "sipofeguwi@mailinator.com",
+      "role": "Aliquid aute recusan",
+      "id": 11
+    },
+    {
+      "name": "Walter Tanner",
+      "email": "sipofeguwi@mailinator.com",
+      "role": "Aliquid aute recusan",
+      "id": 12
+    },
+    {
+      "name": "Walter Tanner",
+      "email": "sipofeguwi@mailinator.com",
+      "role": "Aliquid aute recusan",
+      "id": 13
+    },
+    {
+      "name": "Walter Tanner",
+      "email": "sipofeguwi@mailinator.com",
+      "role": "Aliquid aute recusan",
+      "id": 14
+    },
+    {
+      "name": "Walter Tanner",
+      "email": "sipofeguwi@mailinator.com",
+      "role": "Aliquid aute recusan",
+      "id": 15
+    },
+    {
+      "name": "Walter Tanner",
+      "email": "sipofeguwi@mailinator.com",
+      "role": "Aliquid aute recusan",
+      "id": 16
+    }
+  ]
+}
