@@ -22,13 +22,15 @@ import{MatFormFieldModule} from "@angular/material/form-field";
 import{MatInputModule} from "@angular/material/input";
 import {MatSortModule} from '@angular/material/sort';
 import { MaterialModule } from './Material-Module';
+import { UserListComponent } from './user-list/user-list.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddUserComponent
+    AddUserComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +53,8 @@ import { MaterialModule } from './Material-Module';
     MatInputModule,
     ReactiveFormsModule,
     FormsModule,
-    MatSortModule
+    MatSortModule,
+    MaterialModule
 
   ],
   providers: [],

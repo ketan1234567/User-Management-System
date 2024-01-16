@@ -54,15 +54,6 @@ import { MatIconRegistry } from '@angular/material/icon';
         MatDialogModule,
         MatTableModule,
         
-    
-        
-
-        
-        
-
-        
-    
-
 
     ]
 })
