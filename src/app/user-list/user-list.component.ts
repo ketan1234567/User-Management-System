@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrl: './user-list.component.css',
 })
 export class UserListComponent {
+  FunctionUpdate(id:any){
+
+  }
+  FunctionDelete(id:any){
+
+  }
 
 }
