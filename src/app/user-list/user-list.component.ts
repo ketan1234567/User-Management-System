@@ -4,6 +4,10 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MainServicesService } from '../main-services.service';
 import * as alertify from 'alertifyjs';
+import { ModalpopupComponent } from '../modalpopup/modalpopup.component';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSort } from '@angular/material/sort';
+import { Observable } from 'rxjs';
 
 
 export interface PeriodicElement {
@@ -37,9 +41,22 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 export class UserListComponent implements OnInit {
 
- constructor(private service:MainServicesService) { }
-  ngOnInit(): void {
+  
+
+
+
+  @ViewChild(MatSort) sort: MatSort;
+  selection: any;
+
+
+
+
+ constructor(private service:MainServicesService,private dialog: MatDialog) { }
+  ngOnInit() {
     this.GetAlluser();
+
+    
+   
   }
 
   @ViewChild(MatPaginator) paginator !: MatPaginator;
@@ -52,15 +69,27 @@ export class UserListComponent implements OnInit {
       this.userDetails = item;
       this.dataSource = new MatTableDataSource<any>(this.userDetails);
       this.dataSource.paginator = this.paginator;
-      // console.log(this.userDetails);
+      this.dataSource.sort = this.sort;
+       console.log(this.userDetails);
     });
 
   }
-  displayedColumns: string[] = ['userid', 'username', 'email', 'IsActive', 'Role', 'Actions'];
+  displayedColumns: string[] = ['userid', 'name', 'email', 'IsActive', 'Role', 'Actions'];
   // dataSource = ELEMENT_DATA;
   FunctionUpdate(userid: any) {
-   
-
+   // alert(userid)
+    let popup = this.dialog.open(ModalpopupComponent, {
+      width: '380px',
+      //  height:'300px',
+      exitAnimationDuration: '500ms',
+      enterAnimationDuration: '500ms',
+      data: {
+        userid: userid
+      }
+    })
+    popup.afterClosed().subscribe(item => {
+      this.GetAlluser();
+    });
 
   }
   FunctionDelete(userid: any) {
@@ -72,4 +101,18 @@ export class UserListComponent implements OnInit {
 
     }, function () { });
   }
+
+ /** Whether the number of selected elements matches the total number of rows. */
+isAllSelected() {
+  const numSelected = this.selection.selected.length;
+  const numRows = this.dataSource.data.length;
+  return numSelected == numRows;
+}
+
+/** Selects all rows if they are not all selected; otherwise clear selection. */
+toggleAllRows() {
+  this.isAllSelected() ?
+      this.selection.clear() :
+      this.dataSource.data.forEach(row => this.selection.select(row));
+}
 }

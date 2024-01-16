@@ -1,3 +1,9 @@
 table {
     width: 100%;
   }
+  .user{
+    text-align: center;
+  }
+  .mat-column-select {
+    overflow: initial;
+  }

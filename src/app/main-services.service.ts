@@ -21,5 +21,15 @@ export class MainServicesService {
 deleteById(id:any){
  return this._http.delete(this.apiurl+"/" +id)
 }
+GetAllRole(){
+  return this._http.get<any>(this.apiurl);
+}
+GetUserById(UserId:any){
+  return this._http.get(this.apiurl+'/'+UserId)
+}
+UpdateUser(inputdata:any){
+  return this._http.put(this.apiurl+'/'+inputdata.id,inputdata)
+
+}
 }
 

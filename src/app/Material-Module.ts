@@ -18,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ErrorStateMatcher } from "@angular/material/core";
 import {MatTableDataSource} from '@angular/material/table';
 import { MatIconRegistry } from '@angular/material/icon';
+import { MatSortModule } from '@angular/material/sort'; 
 
 
 
@@ -53,6 +54,7 @@ import { MatIconRegistry } from '@angular/material/icon';
         MatInputModule,
         MatDialogModule,
         MatTableModule,
+        MatSortModule
         
 
     ]

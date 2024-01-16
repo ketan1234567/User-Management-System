@@ -12,7 +12,7 @@ export class AddUserComponent {
   constructor(private _services:MainServicesService){}
   updateform = new FormGroup({
     name: new FormControl("",Validators.required),
-    email: new FormControl("",Validators.required),
+    email:new FormControl('',Validators.compose([Validators.required,Validators.email])),
     role: new FormControl("",Validators.required)
   })
   SaveUser(){

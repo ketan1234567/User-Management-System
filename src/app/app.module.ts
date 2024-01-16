@@ -23,6 +23,7 @@ import{MatInputModule} from "@angular/material/input";
 import {MatSortModule} from '@angular/material/sort';
 import { MaterialModule } from './Material-Module';
 import { UserListComponent } from './user-list/user-list.component';
+import { ModalpopupComponent } from './modalpopup/modalpopup.component';
 
 
 
@@ -30,7 +31,8 @@ import { UserListComponent } from './user-list/user-list.component';
   declarations: [
     AppComponent,
     AddUserComponent,
-    UserListComponent
+    UserListComponent,
+    ModalpopupComponent
   ],
   imports: [
     BrowserModule,

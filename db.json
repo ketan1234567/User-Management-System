@@ -1,35 +1,11 @@
 {
   "signup": [
     {
-      "name": "anil",
-      "email": "anil647@gmail.com",
-      "password": "vishal@123",
-      "role": "user",
-      "isActive": "0",
-      "id": 2
-    },
-    {
-      "name": "hiteshrawat",
-      "email": "hiteshrawat@123.com",
-      "password": "hitesh@123",
-      "role": "staff",
-      "isActive": "0",
-      "id": 3
-    },
-    {
-      "name": "ketandeshmukh",
-      "email": "deshmukhketan647@gmail.com",
-      "password": "ketan@123",
-      "role": "staff",
-      "isActive": 1,
-      "id": 4
-    },
-    {
       "name": "snehal",
       "email": "snehal@123.com",
       "password": "wwwwwwwwwwwww",
-      "role": "user",
-      "isActive": true,
+      "role": "Quo voluptatum iure ",
+      "isActive": false,
       "id": 5
     },
     {
@@ -103,10 +79,52 @@
       "id": 15
     },
     {
-      "name": "Walter Tanner",
-      "email": "sipofeguwi@mailinator.com",
-      "role": "Aliquid aute recusan",
+      "name": "Nyssa Nichols",
+      "email": "xaxasetyw@mailinator.com",
+      "role": "Ea sunt lorem sunt d",
       "id": 16
+    },
+    {
+      "name": "ketan",
+      "email": "deshmuketan657@gmail.com",
+      "role": "user",
+      "id": 17,
+      "userid": "",
+      "isActive": false
+    },
+    {
+      "name": "Sheila Kemp",
+      "email": "kasaxod@mailinator.com",
+      "role": "staff",
+      "id": 18,
+      "userid": "",
+      "isActive": true
+    },
+    {
+      "name": "Deanna Stout",
+      "email": "gyrehu@mailinator.com",
+      "role": "Culpa illo laborum ",
+      "id": 19
+    },
+    {
+      "name": "Evan Boone",
+      "email": "gosudy@mailinator.com",
+      "role": "staff",
+      "id": 20,
+      "userid": "",
+      "isActive": true
+    },
+    {
+      "name": "Aurelia ",
+      "email": "ame@mailinator.com",
+      "role": "user",
+      "id": 21
+    },
+    {
+      "name": "balbu",
+      "email": "bablu@mailinator.com",
+      "role": "staff",
+      "id": 22
     }
   ]
 }
