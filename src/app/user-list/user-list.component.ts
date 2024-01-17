@@ -8,6 +8,7 @@ import { ModalpopupComponent } from '../modalpopup/modalpopup.component';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSort } from '@angular/material/sort';
 import { Observable } from 'rxjs';
+import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 
 
 export interface PeriodicElement {
@@ -41,23 +42,51 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 export class UserListComponent implements OnInit {
 
-  
-
-
-
+  search: any;
   @ViewChild(MatSort) sort: MatSort;
   selection: any;
-
-
-
-
- constructor(private service:MainServicesService,private dialog: MatDialog) { }
+constructor(private service: MainServicesService, private dialog: MatDialog,private responsive: BreakpointObserver) { }
   ngOnInit() {
     this.GetAlluser();
+    this.responsive.observe(Breakpoints.HandsetLandscape)
+    .subscribe(result => {
 
-    
-   
+      if (result.matches) {
+        console.log("screens matches HandsetLandscape");
+      }
+
+});
+
+this.responsive.observe([
+  Breakpoints.TabletPortrait,
+  Breakpoints.HandsetLandscape])
+  .subscribe(result => {
+
+    const breakpoints = result.breakpoints;
+
+    if (breakpoints[Breakpoints.TabletPortrait]) {
+      console.log("screens matches TabletPortrait");
+    }
+    else if (breakpoints[Breakpoints.HandsetLandscape]) {
+      console.log("screens matches HandsetLandscape");
+    }
+
+  });
+  
+}
+
+
+
+
+
+
+
+  changeFilter(value: any): void {
+    console.log(value.data);
+
+
   }
+
 
   @ViewChild(MatPaginator) paginator !: MatPaginator;
 
@@ -70,14 +99,14 @@ export class UserListComponent implements OnInit {
       this.dataSource = new MatTableDataSource<any>(this.userDetails);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
-       console.log(this.userDetails);
+      //console.log(this.userDetails);
     });
 
   }
   displayedColumns: string[] = ['userid', 'name', 'email', 'IsActive', 'Role', 'Actions'];
   // dataSource = ELEMENT_DATA;
   FunctionUpdate(userid: any) {
-   // alert(userid)
+    // alert(userid)
     let popup = this.dialog.open(ModalpopupComponent, {
       width: '380px',
       //  height:'300px',
@@ -102,17 +131,27 @@ export class UserListComponent implements OnInit {
     }, function () { });
   }
 
- /** Whether the number of selected elements matches the total number of rows. */
-isAllSelected() {
-  const numSelected = this.selection.selected.length;
-  const numRows = this.dataSource.data.length;
-  return numSelected == numRows;
-}
 
-/** Selects all rows if they are not all selected; otherwise clear selection. */
-toggleAllRows() {
-  this.isAllSelected() ?
-      this.selection.clear() :
-      this.dataSource.data.forEach(row => this.selection.select(row));
-}
+  /** Selects all rows if they are not all selected; otherwise clear selection. */
+
+
+  applyFilter(event: Event): void {
+    const target = event.target as HTMLInputElement;
+    const filterValue = target.value;
+
+    if (this.selection) {
+      this.dataSource.filter = this.selection.trim().toLowerCase() || filterValue.trim().toLowerCase();
+    } else {
+      this.dataSource.filter = filterValue.trim().toLowerCase();
+    }
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
+
+
+
+
+
 }

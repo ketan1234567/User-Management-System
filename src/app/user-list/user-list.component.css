@@ -7,3 +7,12 @@ table {
   .mat-column-select {
     overflow: initial;
   }
+  .row{
+    margin-left: 67%;
+  }
+
+
+  .container.is-phone-portrait {
+    margin: 0;
+    padding:0;
+ }

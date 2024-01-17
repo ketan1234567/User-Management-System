@@ -19,6 +19,9 @@ import { ErrorStateMatcher } from "@angular/material/core";
 import {MatTableDataSource} from '@angular/material/table';
 import { MatIconRegistry } from '@angular/material/icon';
 import { MatSortModule } from '@angular/material/sort'; 
+import {LayoutModule} from '@angular/cdk/layout';
+
+
 
 
 
@@ -54,7 +57,8 @@ import { MatSortModule } from '@angular/material/sort';
         MatInputModule,
         MatDialogModule,
         MatTableModule,
-        MatSortModule
+        MatSortModule,
+        LayoutModule
         
 
     ]
