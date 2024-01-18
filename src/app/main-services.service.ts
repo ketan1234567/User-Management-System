@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MainServicesService {
-  apiurl='http://localhost:3000/signup';
+  apiurl='  http://localhost:3000/signup';
 
   constructor(private _http:HttpClient) { }
 

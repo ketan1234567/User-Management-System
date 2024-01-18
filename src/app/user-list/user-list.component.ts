@@ -48,30 +48,30 @@ export class UserListComponent implements OnInit {
 constructor(private service: MainServicesService, private dialog: MatDialog,private responsive: BreakpointObserver) { }
   ngOnInit() {
     this.GetAlluser();
-    this.responsive.observe(Breakpoints.HandsetLandscape)
-    .subscribe(result => {
+//     this.responsive.observe(Breakpoints.HandsetLandscape)
+//     .subscribe(result => {
 
-      if (result.matches) {
-        console.log("screens matches HandsetLandscape");
-      }
+//       if (result.matches) {
+//         console.log("screens matches HandsetLandscape");
+//       }
 
-});
+// });
 
-this.responsive.observe([
-  Breakpoints.TabletPortrait,
-  Breakpoints.HandsetLandscape])
-  .subscribe(result => {
+// this.responsive.observe([
+//   Breakpoints.TabletPortrait,
+//   Breakpoints.HandsetLandscape])
+//   .subscribe(result => {
 
-    const breakpoints = result.breakpoints;
+//     const breakpoints = result.breakpoints;
 
-    if (breakpoints[Breakpoints.TabletPortrait]) {
-      console.log("screens matches TabletPortrait");
-    }
-    else if (breakpoints[Breakpoints.HandsetLandscape]) {
-      console.log("screens matches HandsetLandscape");
-    }
+//     if (breakpoints[Breakpoints.TabletPortrait]) {
+//       console.log("screens matches TabletPortrait");
+//     }
+//     else if (breakpoints[Breakpoints.HandsetLandscape]) {
+//       console.log("screens matches HandsetLandscape");
+//     }
 
-  });
+//   });
   
 }
 
@@ -99,7 +99,7 @@ this.responsive.observe([
       this.dataSource = new MatTableDataSource<any>(this.userDetails);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
-      //console.log(this.userDetails);
+      console.log(this.userDetails);
     });
 
   }

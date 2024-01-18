@@ -9,6 +9,7 @@ import * as alertify from 'alertifyjs';
   styleUrl: './add-user.component.css'
 })
 export class AddUserComponent {
+  respdata:any
   constructor(private _services:MainServicesService){}
   updateform = new FormGroup({
     name: new FormControl("",Validators.required),
@@ -18,10 +19,11 @@ export class AddUserComponent {
   SaveUser(){
     if(this.updateform.valid){
       this._services.Adduser(this.updateform.value).subscribe((result)=>{
-        console.log(result);
-        if (result) {
+        //console.log(result);
+        this.respdata=result;
+        if (this.respdata=result) {
+          localStorage.setItem("add_user",JSON.stringify(this.respdata))
           alertify.success("This is SuccessFully  Inserted Data");
-  
         } else {
           alertify.error("please Try again");
         }
