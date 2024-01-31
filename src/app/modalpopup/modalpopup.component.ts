@@ -32,54 +32,52 @@ export class ModalpopupComponent {
 
 
   SaveUser() {
-
+    console.log(this.updateform.value);
+    
     if (this.updateform.valid) {
-      this.editdata.name = this.updateform.getRawValue().userid
-      this.editdata.role = this.updateform.getRawValue().role
-      this.editdata.isActive = this.updateform.getRawValue().isActive
-
-
-      console.log(this.editdata.userid);
-      
-      console.log(this.editdata.role);
-
-      console.log(this.editdata.isActive);
-      
-      
-
+      this.editdata.name = this.updateform.get('name').value;
+      this.editdata.role = this.updateform.get('role').value;
+      this.editdata.isActive = this.updateform.get('isActive').value;
+  
       this._service.UpdateUser(this.editdata).subscribe(item => {
         this.savedata = item;
-        //console.log(this.updateform.getRawValue());
-        this.savedata = item;
-        if (this.savedata = item) {
-          alertify.success("This is SuccessFully Updated");
+        if (this.savedata === item) {
+          alertify.success('Successfully Updated');
           this.ref.close();
         } else {
-          alertify.error("please Try again");
+          alertify.error('Please try again');
         }
       });
     }
-
   }
+  
 
   GetExistdata(userid: any) {
     this._service.GetUserById(userid).subscribe(item => {
+      // Retrieve user data and assign it to editdata and editdataName
       this.editdata = item;
-      this.editdataName=item
-    //  console.log(this.editdata.name);
+      this.editdataName = item;
+
+
+  console.log(this.editdataName.name);
+  
+  
+      // Check if editdata is not null
       if (this.editdata != null) {
-        this.updateform.setValue({ userid: this.editdata.name ,role: this.editdata.role, isActive: this.editdata.isActive });
-
-        //this.updateform.setValue({userid: this.editdata.id, role: this.editdata.role, isActive: this.editdata.isActive});
+        // Set the values of your form using setValue
+        this.updateform.setValue({
+          name: this.editdata.name,
+          role: this.editdata.role,
+          isActive: this.editdata.isActive
+        });
       }
-
     });
-
   }
+  
 
 
   updateform = new FormGroup({
-    userid: new FormControl({ value: "", disabled: true }),
+    name: new FormControl(),
     role: new FormControl("", Validators.required),
     isActive: new FormControl(true)
   })

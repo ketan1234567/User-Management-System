@@ -24,6 +24,8 @@ import {MatSortModule} from '@angular/material/sort';
 import { MaterialModule } from './Material-Module';
 import { UserListComponent } from './user-list/user-list.component';
 import { ModalpopupComponent } from './modalpopup/modalpopup.component';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { TestData } from './test-Data';
 
 
 
@@ -56,7 +58,8 @@ import { ModalpopupComponent } from './modalpopup/modalpopup.component';
     ReactiveFormsModule,
     FormsModule,
     MatSortModule,
-    MaterialModule
+    MaterialModule,
+    InMemoryWebApiModule.forRoot(TestData),
 
   ],
   providers: [],

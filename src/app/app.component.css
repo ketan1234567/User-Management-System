@@ -18,8 +18,25 @@ span.add-user {
     color: white;
     text-align: center;
     margin-left: 30%;
+
 }
 span.add-user a {
     color: white;
  
 }
+
+span.add-user a:link {
+    text-decoration: none;
+  }
+  
+  span.add-user a:visited {
+    text-decoration: none;
+  }
+  
+  span.add-user a:hover {
+    text-decoration: underline;
+  }
+  
+  span.add-user a:active {
+    text-decoration: underline;
+  }

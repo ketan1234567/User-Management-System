@@ -113,7 +113,8 @@ constructor(private service: MainServicesService, private dialog: MatDialog,priv
       exitAnimationDuration: '500ms',
       enterAnimationDuration: '500ms',
       data: {
-        userid: userid
+        userid: userid,
+        name:name
       }
     })
     popup.afterClosed().subscribe(item => {
@@ -122,6 +123,8 @@ constructor(private service: MainServicesService, private dialog: MatDialog,priv
 
   }
   FunctionDelete(userid: any) {
+    console.log(userid);
+    
     alertify.confirm("Remove user", "do you wnat to remove this user?", () => {
       this.service.deleteById(userid).subscribe(item => {
         this.GetAlluser();

@@ -6,7 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MainServicesService {
-  apiurl='  http://localhost:3000/signup';
+  //apiurl='  http://localhost:3000/signup';
+apiurl = "http://localhost:4200/api/books";
+
 
   constructor(private _http:HttpClient) { }
 
@@ -16,7 +18,7 @@ export class MainServicesService {
 
 
   Adduser(data:any){
-   return  this._http.post("http://localhost:3000/signup",data)
+   return  this._http.post("http://localhost:4200/api/books",data)
 }
 deleteById(id:any){
  return this._http.delete(this.apiurl+"/" +id)
