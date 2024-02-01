@@ -32,7 +32,7 @@ export class ModalpopupComponent {
 
 
   SaveUser() {
-    console.log(this.updateform.value);
+    //console.log(this.updateform.value);
     
     if (this.updateform.valid) {
       this.editdata.name = this.updateform.get('name').value;

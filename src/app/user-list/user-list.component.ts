@@ -41,7 +41,10 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 
 export class UserListComponent implements OnInit {
-
+   OurMainRole:any
+   adminRole:any
+   isApple: boolean = true;
+   showButton: boolean = true;
   search: any;
   @ViewChild(MatSort) sort: MatSort;
   selection: any;
@@ -99,10 +102,16 @@ constructor(private service: MainServicesService, private dialog: MatDialog,priv
       this.dataSource = new MatTableDataSource<any>(this.userDetails);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
-      console.log(this.userDetails);
+  
+      // Assuming you have a property to store the user role in your component
+      this.adminRole = this.userDetails.length > 0 ? this.userDetails[0].role : ''; 
     });
-
   }
+  
+
+
+
+  
   displayedColumns: string[] = ['userid', 'name', 'email', 'IsActive', 'Role', 'Actions'];
   // dataSource = ELEMENT_DATA;
   FunctionUpdate(userid: any) {
@@ -114,7 +123,8 @@ constructor(private service: MainServicesService, private dialog: MatDialog,priv
       enterAnimationDuration: '500ms',
       data: {
         userid: userid,
-        name:name
+        name:name,
+      
       }
     })
     popup.afterClosed().subscribe(item => {

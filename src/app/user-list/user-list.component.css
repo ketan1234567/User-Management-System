@@ -16,3 +16,28 @@ table {
     margin: 0;
     padding:0;
  }
+
+ @media only screen and (max-width: 600px) {
+
+  .user-Details{
+    width: 50%;
+  }
+  table {
+    width: 50%;
+  }
+  .user{
+    text-align: center;
+  }
+  .mat-column-select {
+    overflow: initial;
+  }
+  .row{
+    margin-left: 67%;
+  }
+
+
+  .container.is-phone-portrait {
+    margin: 0;
+    padding:0;
+ }
+}
