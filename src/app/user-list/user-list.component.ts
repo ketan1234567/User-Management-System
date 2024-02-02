@@ -8,7 +8,8 @@ import { ModalpopupComponent } from '../modalpopup/modalpopup.component';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSort } from '@angular/material/sort';
 import { Observable } from 'rxjs';
-import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+
 
 
 export interface PeriodicElement {
@@ -48,35 +49,51 @@ export class UserListComponent implements OnInit {
   search: any;
   @ViewChild(MatSort) sort: MatSort;
   selection: any;
+  hideSideMenu = false;
+  isPhonePortrait = false;
 constructor(private service: MainServicesService, private dialog: MatDialog,private responsive: BreakpointObserver) { }
   ngOnInit() {
     this.GetAlluser();
-//     this.responsive.observe(Breakpoints.HandsetLandscape)
-//     .subscribe(result => {
 
-//       if (result.matches) {
-//         console.log("screens matches HandsetLandscape");
-//       }
 
-// });
-
-// this.responsive.observe([
-//   Breakpoints.TabletPortrait,
-//   Breakpoints.HandsetLandscape])
-//   .subscribe(result => {
-
-//     const breakpoints = result.breakpoints;
-
-//     if (breakpoints[Breakpoints.TabletPortrait]) {
-//       console.log("screens matches TabletPortrait");
-//     }
-//     else if (breakpoints[Breakpoints.HandsetLandscape]) {
-//       console.log("screens matches HandsetLandscape");
-//     }
-
-//   });
+    this.responsive.observe([
+      Breakpoints.TabletPortrait,
+      Breakpoints.HandsetLandscape])
+      .subscribe(result => {
+        const breakpoints = result.breakpoints;
+        if (breakpoints[Breakpoints.TabletPortrait]) {
+          console.log("Screen matches TabletPortrait");
+        } else if (breakpoints[Breakpoints.HandsetLandscape]) {
+          console.log("Screen matches HandsetLandscape");
+          this.isPhonePortrait = true; // Set a property in your component for ngClass
+        }
+      });
+    
+      this.responsive.observe([
+        Breakpoints.HandsetLandscape,      
+        Breakpoints.TabletLandscape,
+      ])
+      .subscribe(result => {
+        this.isPhonePortrait = false; 
+        this.hideSideMenu = false; 
+      
+        if (result.matches) {
+          this.hideSideMenu = true;
+          this.isPhonePortrait = true; 
+        }
+      });
+      
   
 }
+
+
+
+
+
+
+
+  
+
 
 
 

@@ -1,41 +1,38 @@
+/* Global styles */
 table {
-    width: 100%;
-  }
-  .user{
-    text-align: center;
-  }
-  .mat-column-select {
-    overflow: initial;
-  }
-  .row{
-    margin-left: 67%;
+  width: 100%;
+}
+
+.user {
+  text-align: center;
+}
+
+.mat-column-select {
+  overflow: initial;
+}
+
+.row {
+  margin-left: 67%;
+}
+
+.container.is-phone-portrait {
+  margin: 0;
+  padding: 0;
+}
+
+/* Media query for screens with max-width: 600px */
+@media only screen and (max-width: 600px) {
+  .user-Details {
+    width: 30%;
   }
 
-
-  .container.is-phone-portrait {
-    margin: 0;
-    padding:0;
- }
-
- @media only screen and (max-width: 600px) {
-
-  .user-Details{
-    width: 50%;
-  }
   table {
     width: 50%;
   }
-  .user{
-    text-align: center;
-  }
-  .mat-column-select {
-    overflow: initial;
-  }
-  .row{
-    margin-left: 67%;
-  }
 
-
+  .row {
+    margin-left: 0; /* Adjust margin for smaller screens */
+  }
   .container.is-phone-portrait {
     margin: 0;
     padding:0;

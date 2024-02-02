@@ -1,0 +1,13 @@
+    <ng-container matColumnDef="Actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let element">
+        <div style="display:flex">
+          <!-- Show Edit button only for admin -->
+          <button *ngIf="element.role === 'admin'" mat-raised-button color="primary" (click)="FunctionUpdate(element.id)">Edit</button>
+    
+          <!-- Hide Delete button for all users -->
+     
+        </div>
+      </td>
+    </ng-container>
+    
