@@ -1,40 +1,67 @@
-/* Global styles */
-table {
-  width: 100%;
-}
 
-.user {
+
+
+body {
+  font-family: 'Covered By Your Grace', cursive;
+  line-height: 1.25;
+  
+}
+.row{
   text-align: center;
-}
-
-.mat-column-select {
-  overflow: initial;
-}
-
-.row {
-  margin-left: 67%;
-}
-
-.container.is-phone-portrait {
-  margin: 0;
-  padding: 0;
-}
-
-/* Media query for screens with max-width: 600px */
-@media only screen and (max-width: 600px) {
-  .user-Details {
-    width: 30%;
-  }
-
-  table {
-    width: 50%;
-  }
-
-  .row {
-    margin-left: 0; /* Adjust margin for smaller screens */
-  }
+   }
+   .mat-table .mat-row,
+   .mat-table .mat-cell {
+     display: block;
+   }
+     
   .container.is-phone-portrait {
+    margin: 10  0%;
+    padding: 50%;
+  }
+@media screen and (max-width: 960px) {
+
+  .row{
+ text-align: center;
+  }
+  .mat-table {
+    border: 0;
+    vertical-align: middle
+  }
+
+  .mat-table caption {
+    font-size: 1em;
+  }
+  
+  /*  Enable this to hide header
+  .mat-table .mat-header-cell {
+    
+    border: 10px solid;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  */
+
+  .mat-table .mat-row,
+  .mat-table .mat-cell {
+    display: table-row;
+  }
+  /*
+  
+  .mat-table .mat-row:nth-child(even) {background: #CCC}
+  .mat-table .mat-row:nth-child(odd) {background: #FFF}
+  */
+  .mat-table .mat-cell {
+    width: auto; /* or set an absolute width if needed */
     margin: 0;
-    padding:0;
- }
+    height: auto; /* Adjust height as needed */
+    text-align: left; /* Adjust text alignment as needed */
+  }
+  .mat-table .mat-cell:before {
+    margin-top: 0; /* Adjust margin-top as needed */
+  }
+
 }

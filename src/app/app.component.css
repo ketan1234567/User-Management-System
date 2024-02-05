@@ -25,6 +25,17 @@ span.add-user a {
  
 }
 
+span.login {
+  color: white;
+  text-align: center;
+  margin-left: 30%;
+
+}
+span.login a {
+  color: white;
+
+}
+
 span.add-user a:link {
     text-decoration: none;
   }
@@ -40,3 +51,22 @@ span.add-user a:link {
   span.add-user a:active {
     text-decoration: underline;
   }
+
+  span.login a:hover {
+    text-decoration: underline;
+  }
+  
+  span.login a:active {
+    text-decoration: underline;
+  }
+ 
+
+  @media only screen and (max-width: 600px) {
+    .app-sidenav-content {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      justify-content: stretch;
+  } 
+  }
+  

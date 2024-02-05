@@ -1,16 +1,16 @@
-<!-- <h2 class="user">UserDetails</h2>
+<h2 class="user row">UserDetails</h2>
 
-<div class="row">
+<div class="row user">
   <div class="col-sm-6 col-md-6">
     <mat-form-field>
       <input matInput [(ngModel)]="search" (keyup)="applyFilter($event)" placeholder="Search">
       <mat-icon matSuffix>search</mat-icon>
     </mat-form-field>
   </div>
-</div> -->
-<div class="container" [ngClass]="{'is-phone-portrait': isPhonePortrait}"> 
+</div> 
+<div class="container" [ngClass]="{'is-phone-portrait': isPhonePortrait}" fxLayout.gt-sm="row" fxLayout.xs="column" fxLayoutGap="16px"> 
 
-  <div  class="user-Details" *ngIf="!hideSideMenu">
+  <div  class="user-Details"  class="user-Details" fxLayout="column" fxLayoutGap="30px">
 
 
 
@@ -67,7 +67,7 @@
         <td mat-cell *matCellDef="let element">
           <div style="display:flex">
             <!-- Show Edit button only for admin -->
-            <button *ngIf="element.role === 'admin'" mat-raised-button color="primary" (click)="FunctionUpdate(element.id)">Edit</button>
+            <button *ngIf="element.role === 'admin'" mat-raised-button color="primary" (click)="FunctionUpdate(element.id)">Edit</button> &nbsp;
       
             <!-- Show Delete button for both user and admin -->
             <button mat-raised-button color="accent" (click)="FunctionDelete(element.id)">Delete</button>
@@ -80,8 +80,13 @@
       
   
   
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns">
+      
+      
+      </tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+      
+      </tr>
     </table>
     <mat-paginator [length]="100" [pageSize]="5" [pageSizeOptions]="[3, 5, 10, 25, 100]" aria-label="Select page">
     </mat-paginator>
@@ -91,4 +96,5 @@
 
 
  </div>
+
 

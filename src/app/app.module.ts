@@ -26,6 +26,8 @@ import { UserListComponent } from './user-list/user-list.component';
 import { ModalpopupComponent } from './modalpopup/modalpopup.component';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { TestData } from './test-Data';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -34,7 +36,8 @@ import { TestData } from './test-Data';
     AppComponent,
     AddUserComponent,
     UserListComponent,
-    ModalpopupComponent
+    ModalpopupComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -59,6 +62,7 @@ import { TestData } from './test-Data';
     FormsModule,
     MatSortModule,
     MaterialModule,
+    FlexLayoutModule,
     InMemoryWebApiModule.forRoot(TestData),
 
   ],

@@ -1,3 +1,8 @@
+
+.main{
+    background-color: skyblue;
+    width: 70%;
+}
 .ng-star-inserted{
     width: 70%;
 }
@@ -9,6 +14,6 @@
     margin:5px 0px 0px 100px; 
 }
 .mat-mdc-raised-button.mat-mdc-button-base{
-    height: 30px;
-    margin: 0px 0px 0px 35px;
+  
+
 }
